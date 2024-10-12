@@ -1,0 +1,255 @@
+---
+title: "Final Project Writing"
+author: "Jen Peng, Nancy Nguyen, Dawn Nguyen, Xavier Le"
+date: "2024-03-08"
+output: html_document
+---
+
+## Abstract
+College students are busy individuals with many obligations, one of the biggest obligations they seem to overlook is sleep. Most do not attain the recommended 7 hours of sleep and experience consequences during the daytime. This data analysis aims to shine a light on the importance of sleep. Our study focuses on the possible causes of sleep deprivation, like technology use, and the impact on academic performance and depression. Overall, this study contradicted one of our beliefs that technology use correlates with bad sleep habits, while also confirming that sleep deprivation is a factor in academic performance and depression.
+
+## Intro
+The recommendation is that adults get at least 7 hours of sleep each night. However, “35% of all adults in the U.S. report sleeping for less than seven hours per night on average” (National Sleep Foundation). Not getting enough sleep can impact mood, work performance, and the ability to exercise, and negatively affect their relationships with friends and family. Especially for college students, sleep is crucial for their academic success and overall well-being. The National Institutes of Health reports that an astounding 70% of college students attain insufficient sleep and 50% report feeling daytime sleepiness often. Due to students’ pact schedules with class, homework, extracurricular activities, and social life, sleep is often sacrificed, leading to a host of negative consequences. 
+College time is a busy time when students have a multitude of obligations they must fulfill. It may seem like the only solution to do it all is to sleep less. However, sleep should be one of the highest obligations that students must learn to balance. We now know that sleep deprivation among students continues to be a trend year over year. With more information and urgency for better sleep hygiene, hopefully, students will learn that sleep should not be a last resort as it directly affects daytime productivity.
+
+Our group decided to dive deeper into this topic to draw conclusions concerning the sleep habits of college students and see if our analysis matches the existing findings and hopefully get a better understanding of the sleep habits of college students. Sleep is a necessity of life as much as water, food, and shelter. Adequate sleep is crucial for all cognitive function, learning, and memory consolidation. Addressing sleep-related issues among college students can contribute to creating a healthier and more productive campus environment. In addition to studying the sleep habit, we also want to see what other factors can contribute to “bad” sleep quality. 
+
+In this project, we aim to answer the questions of: 
+
+- How does age compare to the amount of sleep students are getting each night?
+
+- How does technology usage affect sleep quality?
+
+- Is there a correlation between academic performance and the amount of sleep a student gets?
+
+- Is there a correlation between a college-aged person’s mental well-being and the amount of sleep they get?
+
+First, we will start by analyzing the whole adult population to find disparities among different genders in terms of sleep duration. By focusing on the general public first, we can gain a broader understanding of sleep patterns and potential disparities before zooming in on specific demographics such as college students. Then, we’ll focus on how technology use affects sleep quality. Nowadays, technology has become what seems like a necessity for students' daily lives.  Studying this aspect, we aim to explore the intricate relationship between technology use and sleep quality among college students. Finally, we’ll shift to concentrate on the consequences of sleep deprivation to see if sleep deprivation impacts these areas.
+
+As college students ourselves, this topic is personal as we too struggle with sleep deprivation. We intimately understand the challenges and pressures that can impede our ability to get adequate rest. Whether it's late-night study sessions, social commitments, or the allure of endless online distractions, we've experienced firsthand the consequences of sleep deprivation on our academic performance, mental health, and overall well-being. To help ourselves our peers, and other college students, we want to raise awareness and initiate conversations about the importance of prioritizing sleep and adopting healthy sleep habits. 
+
+## Explanation of Data
+In our study we examined the possible factors that may influence our sleep quality as students. This has an emphasis on understanding how technology use before bedtime can affect sleep, alongside age, gender, mental health and other variables as well. To explore this, we curated a selection of datasets from Kaggle.com from trustworthy publishers and also the [NCBI website](https://www.ncbi.nlm.nih.gov/), and made sure all of them were .csv files. The data we use is freely available for everyone to download, provided they have an account. The datasets we ended up using were “Sleep Efficiency, Sleep Study, Nightly Sleep Duration, and Psychosocial Dimensions of Student Life”. All studies also kept an ethical integrity maintained throughout, so there are no ethical concerns. 
+
+These datasets were chosen because they aligned with our research aims, providing us multiple factors that could help us determine what may/may not be influencing sleep quality, including technology use, demographic variables and the lifestyle choices students may use. 
+
+Our first dataset, [“Sleep Efficiency”](https://www.kaggle.com/datasets/equilibriumm/sleep-efficiency), originates from a study conducted in Morocco by artificial intelligence engineering students from ENSIAS. In general, the dataset focuses on sleep patterns and quality across ages from 9 to 69 in both genders, exploring potential influential factors. Our project, focusing on age, gender, and sleep duration, will particularly examine sleep duration variations across age groups. The population includes all individuals in the local community, with a sample of recruited participants. A noted issue is the unequal number of participants across age groups, potentially affecting results. However, analysis based on average values aims to address this. In the dataset, there are 452 rows and 15 columns. Each row represents the sleep data of an individual participant, detailing their age, gender, sleep timings, duration, efficiency, and lifestyle factors such as caffeine, alcohol consumption, smoking status, and exercise frequency. In general, the data quality is good. Although it contains 60 missing values, when I clear the data and select the variables I need, the missing value will be 0. Therefore, the data quality is good.
+
+Our second single dataset, [“Sleep Study”](https://www.kaggle.com/datasets/mlomuscio/sleepstudypilot?select=SleepStudyData.csv), was derived from the researcher Micheal Lomuscio. The population of interest during this study was on teenagers and students in school, it involved 104 participants. Each row in the dataset represented an individual's daily sleep record, comprising 104 rows and 6 columns. The relevant variables for our analysis were: "Hours" (The number of hours the participant slept, coded as a numeric value.) "Phone Time" (Whether or not the participant used their phone before bed, coded as categorical 'Yes' or 'No'). The coding strategy used was straightforward, given that their formats in the dataset were hours in a numeric value and a yes or no in a binary form. The binary form was easy to group it during the analysis since it helped compute the averages and compare sleep durations based on pre-sleep phone usage. Only two entries with missing sleep hours were excluded from the dataset.
+
+Our third selection is two datasets merged together, [“The Nightly Sleep Duration”](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9974458/) dataset alongside [“Psychosocial Dimensions of Student Life”](https://www.kaggle.com/datasets/mdismielhossenabir/psychosocial-dimensions-of-student-life). This resulted in a merged dataset of 730 rows and 3 columns. The “Psychosocial Dimensions of Student Life” dataset will be explained in the next paragraph. As for the “Nightly Sleep Duration” dataset, the data was collected by 19 researchers from Carnegie Mellon, the University of Pittsburgh, the University of Washington, Notre Dame, and the University of Virginia. With a total of 634 rows and 15 different variables, we chose this dataset because it contains the pertinent variables we needed. Each row in this dataset represents the sleep and academic information of a student from the home institutions of the researchers. Out of the 15 variables, the 3 variables we used were “Demo_gender, TotalSleepTime, and Cum_gpa”. The main challenge encountered was unnoticed blank-coded missing values, with only three missing in the gender variable, deemed minor. We have merged the “Nightly Sleep Duration” dataset with the ”Psychosocial Dimensions of Student Life” dataset since they have the same 3 variables we need to further assess students’ sleep patterns and their academic performance. The merged dataset now has a total 730 rows and 3 columns.
+
+And now for our final dataset, [“Psychosocial Dimensions of Student Life”](https://www.kaggle.com/datasets/mdismielhossenabir/psychosocial-dimensions-of-student-life), this was on Kaggle, where Md. Ismiel Hossen Abir explored the relationship between depression, academic performance and ADHD in college students. From a survey of 99 participants, data across 10 variables was taken, all self-reported metrics, such as age, gender, academic performance, depressive symptoms, etc. For our analysis, we chose to focus on depression status, academic challenges, and sleep hours to examine sleep’s impact on  student’s mental well-being and their academic success statuses. The dataset had just one single row missing and a few of the variables were vague about how they were quantified, thankfully none of those were needed to be included in our data analysis. 
+
+For all our datasets, we made sure to clean through our data, and we never found any quality issues when we began creating plots with our final clean datasets. There were only a few missing variables that were easily removed from the rows that were affected in all the data sets. There thankfully was no inconsistencies discovered in the data we chose as well. 
+
+## Methods
+During the process of data cleaning for all the datasets used for our research analysis, we made sure to only incorporate the variables that were relevant as well as making sure we updated how our data processing went in terms of how we utilized it. 
+
+For our “Sleep Efficiency” data, the variables included in our analysis were age, gender and sleep duration. In processing the data process. We first check the sum of the missing values to see the general quality of the dataset. Then, clear up all missing values and keep the three variables that were needed for further analysis. As for sampling, since the question we have is to explore gender in different age groups whether they have significantly different average sleep durations, we will take all samples and get the average to better see the general trend. Therefore, we create two more variables, one of the age group instead of specific age for each person, and the other is average sleep duration to see the main trend.
+
+As for our “Sleep Study” data, our analysis examined the relationship between pre-sleep phone usage and sleep quality, focusing on two main variables derived from the dataset: "Hours" (sleep duration) and "PhoneTime" (phone use before bed), chosen for their direct relevance to the impact of technology use on sleep. The data was then processed by loading from a CSV, removing rows with missing values to avoid analysis issues (this ended up just removing 2 rows), and calculating the average sleep hours overall as well as from each group. This all was to assess the phone usage category’s effects on the graph better. 
+
+For our “Nightly Sleep Duration” and “Psychological Dimensions of Student Life” datasets, we merged the 2 datasets. We have cleaned the “Nightly Sleep Duration” dataset by omitting missing values, converting TotalSleepTime from minutes to hours, categorizing cum_gpa to excellent, good, average, or below average, and changing gender representation from 1 and 0 to female and male. After doing so, we renamed the variables to match that of the ”Psychosocial Dimensions of Student Life” dataset and merged them using rbind().
+
+For our “Psychosocial Dimensions of Student Life” data, we are using this to investigate how sleep influences mental performance, we wanted to observe how SleepPerDayHours relates to the other two relevant variables. We will be focusing on three variables “Depression, Task, and SleepHrs” (renamed respectively). This leads us to creating two separate graphs. The first graph was made by first grouping the student respondents by the reported frequency with which they experience depressive symptoms. The amount of sleep was then averaged for each group for comparison, stored as the new variable sleep_avg. The second graph was made by first grouping students by the frequency with which they experience depressive systems and frequency of experiencing challenges with academic tasks, then taking the averaging the amount of sleep per group for comparison.
+
+## Results
+```{r message=FALSE}
+library(tidyverse)
+```
+
+```{r message=FALSE}
+efficiency <- read_delim("../info201/final/Sleep_Efficiency.csv")
+efficiency <- efficiency %>% 
+  select(Age, Gender, `Sleep duration`) %>% 
+  na.omit(efficiency)
+
+efficiency <- efficiency %>% 
+  mutate(age_group = Age %/% 10 * 10)
+
+ave_efficiency <- efficiency %>%
+  group_by(age_group, Gender) %>%
+  mutate(avesleep = mean(`Sleep duration`, na.rm = TRUE))
+
+ave_efficiency %>% 
+  ggplot(aes(age_group, avesleep, col = Gender)) +
+  geom_point() +
+  geom_line() +
+  scale_color_manual(values = c(Female = "maroon2",
+                               Male = "cornflowerblue")) +
+  geom_text(aes(label = round(avesleep, 2)), vjust = -1, size = 3) +
+  scale_x_continuous(breaks = seq(min(ave_efficiency$age_group), 
+                                  max(ave_efficiency$age_group), 
+                                  by = 10)) +
+  labs(title = "Average Sleep Duration by Age Group and Gender",
+       x = "Age Group",
+       y = "Average Sleep Duration (hours)",
+       fill = "Gender")
+```
+
+As a result, the graph indicates that gender differences in average sleep duration vary across different age groups. Both gender experience a sharp decrease in average sleep duration from the youngest age group to early adulthood, followed by fluctuations through middle age, and an upward trend in older age. Notably, females generally report higher average sleep durations than males across most age groups, with the gap narrowing or inverting at certain middle age points before widening again in the older age groups.
+
+```{r message= FALSE}
+SleepStudyPhoneData <- read_delim("../info201/final/SleepStudyPhoneData.csv")
+SleepStudyPhoneData <- SleepStudyPhoneData %>% 
+  drop_na()
+
+avg_hours_by_phone_usage <- aggregate(Hours ~ PhoneTime, data = SleepStudyPhoneData, FUN = mean)
+overall_avg_sleep_hours <- mean(SleepStudyPhoneData$Hours, na.rm = TRUE)
+
+ggplot(avg_hours_by_phone_usage, aes(x = PhoneTime, y = Hours, fill = PhoneTime)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Number of Hours Slept vs. Phone Usage Before Bed",
+       x = "Used Phone Before Bed",
+       y = "Average Number of Hours Slept") +
+  scale_fill_manual(values = c("bisque2", "cornflowerblue")) +
+  geom_text(aes(label = round(Hours, 2), y = Hours + 0.3)) +  
+  geom_hline(yintercept = overall_avg_sleep_hours, linetype = "dashed", color = "red") +  # Overall average line
+  geom_text(aes(x = 1.5, y = overall_avg_sleep_hours + 0.5, label = paste("Overall Avg Sleep:", round(overall_avg_sleep_hours, 2))), color = "red")
+```
+
+Regardless however, further research should aim for a larger sample size and more control variables would help the analysis be much more accurate in the factors that influence sleep quality and duration. Further research would definitely benefit from larger and more diverse samples (while still maintaining the student aspect of it).
+
+```{r message=FALSE}
+student_performances <- read_delim("../info201/final/student_performances.csv")
+nightly_sleep_duration <- read_delim("../info201/final/pnas.csv")
+
+student_performances <- student_performances %>%
+  rename(gender = Gender, 
+         sleep_hour = SleepPerDayHours, 
+         academic_performance = AcademicPerformance) %>% 
+  select(gender, academic_performance, sleep_hour) 
+
+nightly_sleep_duration <- nightly_sleep_duration %>%
+  select(demo_gender, TotalSleepTime, cum_gpa)
+
+nightly_sleep_duration$demo_gender[nightly_sleep_duration$demo_gender == " "] <- NA
+nightly_sleep_duration <- nightly_sleep_duration %>% 
+  na.omit(demo_gender)
+
+nightly_sleep_duration <- nightly_sleep_duration %>% 
+  mutate(sleep_hour = TotalSleepTime/60)
+
+categorize_gpa <- function(gpa) {
+  if (gpa >= 3.5) {
+    return("Excellent")
+  } else if (gpa >= 3.0) {
+    return("Good")
+  } else if (gpa >= 2.5) {
+    return("Average")
+  } else {
+    return ("Below average")
+  }
+}
+
+nightly_sleep_duration$academic_performance <- sapply(nightly_sleep_duration$cum_gpa, 
+                                                      categorize_gpa)
+
+
+gender = c("Male", "Female")
+nightly_sleep_duration$demo_gender[nightly_sleep_duration$demo_gender == '0'] <- gender[1]
+nightly_sleep_duration$demo_gender[nightly_sleep_duration$demo_gender == '1'] <- gender[2]
+
+nightly_sleep_duration <- nightly_sleep_duration %>% 
+  rename(gender = demo_gender) %>% 
+  select(gender, sleep_hour, academic_performance)
+
+merged_data <- rbind(student_performances, nightly_sleep_duration)
+
+merged_data <- merged_data %>%
+  mutate(academics = factor(academic_performance, 
+                            levels=c("Below average", 
+                                      "Average", 
+                                      "Good", 
+                                      "Excellent")))
+
+merged_data <- merged_data %>% 
+  filter(sleep_hour <= 10)
+
+merged_data %>% 
+  group_by(academics) %>% 
+  mutate(avg_sleep = round(mean(sleep_hour), digits = 2)) %>% 
+  ggplot(aes(academics, avg_sleep)) +
+  geom_point() +
+  geom_text(aes(label = avg_sleep), hjust = -0.2, size = 6) +
+  geom_smooth(method = "lm", se = FALSE, aes(group = 1)) +
+  labs(x = "Academic Performance", y = "Average Sleep Duration (hours)") +
+  ggtitle("Academic Performance vs Average Sleep Duration")
+```
+
+This graph compares the academic performance and the average sleep duration of students. In the x-axis, we have the academic performance in 4 categories from students’ cumulative GPA (2.0 - 2.5 = below average, 2.5 - 3.0 = average, 3.0 - 3.5 = good, and 3.5 - 4.0 = excellent). On the y-axis, we have the average sleep duration who are in the same categories. The result is that there is a positive correlation between these two variables. 
+
+```{r message=FALSE}
+psych<-read_delim("../info201/final/student_performances.csv")%>%
+  select(age = 'Age ',
+         sleephrs = SleepPerDayHours,
+         depression = DepressionStatus,
+         task = FaceChallangesToCompleteAcademicTask)
+
+sleep_dep<- psych%>%
+  group_by(depression)%>%
+  summarize(sleep_avg = mean(sleephrs, na.rm = TRUE))%>%
+  select(sleep_avg, depression)%>%
+  arrange(depression)
+sleep_dep
+
+sleep_dep%>% # y = depression
+  ggplot(aes(x = sleep_avg, y = depression, fill = depression))+
+  geom_col(pos = "dodge")+
+  geom_text(aes(label = round(sleep_avg, 2), vjust = 0.5, hjust = 1.5)) +
+  scale_fill_brewer(palette = "Set3")+
+  labs(title = "Avg. Amount of Sleep v. Reported Depression Status",
+       fill = "Depression Status",
+       x = "Amount of Sleep per Day (average in hours)",
+       y = "Depression Status")
+```
+
+This graph compares the average amount of sleep students get per day (x) in relation to the frequency with which they experience depressive symptoms (y). The graph shows the difference in averaging the amount of sleep students get, grouped by reported frequency of depressive symptoms. The results show that less sleep on average may be associated with more frequent depressive symptoms for students.
+
+```{r}
+sleep_task<- psych %>%
+  filter(!sleephrs == 12) %>%
+  group_by(depression, task) %>%
+  mutate(sleep_avg = mean(sleephrs, na.rm = TRUE)) %>%
+  select(sleep_avg, depression, task) %>%
+  arrange(depression, task) %>%
+  distinct(sleep_avg)
+
+sleep_task%>% # y = tasks
+  arrange(sleep_avg) %>%
+  mutate(task = factor(task,
+                       levels=c("No", "Sometimes", "Yes"))) %>%
+  ggplot(aes(x = sleep_avg, y = task, fill = depression))+
+  geom_col(pos = "dodge")+
+  scale_fill_brewer(palette = "Set3")+
+  labs(title = "Avg. Amount of Sleep v. Challenges Completing Tasks",
+       fill = "Depression Status",
+       col = "Depression Status",
+       x = "Amount of Sleep per Day (average in hours)",
+       y = "Experience challenges completing day-to-day tasks?" )
+
+sleep_task%>% # Average amount of sleep per challenge with tasks
+  group_by(task)%>%
+  summarize(`avg. sleep (hours)` = mean(sleep_avg, na.rm = TRUE))%>%
+  select(`avg. sleep (hours)`, 'challenges w/ tasks?' = task)
+```
+
+This graph compares the average amount of sleep students get per day (x) in relation to their reported frequency with which they experience challenges completing academic tasks. The graph shows the difference in the averages of the amount of sleep students get, grouped by reported frequency of depressive symptoms. Taking the sleep average by frequency of experiencing challenges with academic tasks (Yes = 6.25 sleep hours, Sometimes = 7.6 hours, No = 6.88 hours) shows that students who tend to struggle the most also get the least sleep.
+
+## Findings
+Overall, the results of our multifaceted data analysis provide insight into the relationship between the amount of sleep a college student regularly gets and other aspects of their life.
+We observed that both males and females show a decreasing trend in average sleep duration from the youngest age group to the age group of around 20 years, after which the pattern becomes more variable. For both included genders, the amount of sleep received daily on average was near the least in comparison to other stages in life.
+
+Some of our findings surprisingly go against what we previously presumed were bad factors for sleep. In particular, we found that despite common beliefs that phone use before bed hinders sleep, our data actually shows that students using phones before bed actually sleep more. In our analysis, we see that it positively impacts sleep duration instead. With these surprising results, it can help illustrate that the effect of technology on sleep might not be universally harmful as we might assume it is. 
+That being said, less sleep may negatively impact the mental functioning of students, as suggested by our results evaluating depression status, academic performance, and challenges completing academic tasks. We found that the proportion of students who typically sleep less daily are more prone to experiencing depressive symptoms more frequently. Furthermore, our sampled data showed that only the averages of students who frequently experience depression fall under the recommended amount of sleep for college-aged students, 7-9 hours (Cornell Health). This highlights how students who experience depressive symptoms typically tend to sleep less. Relatedly, we also observed  a slight positive correlation that students that get more sleep do have a higher academic performance, though the difference in numbers featured in this figure are considerably small. This implies that there may be other factors besides sleep quantity that can impact academic performance, such as frequency of encountering academic challenges. 
+Though these were the findings suggested by the graphs, it is important to note that because the number of students included in these data sets are relatively constrained, any observed trends may not be as (statistically) significant had these analyses been performed on a larger sample size.
+
+For future investigations about this topic, we want to further consider that sleep quality can be influenced by many other things and is not solely dependent on one factor (eg. we did not look at the amount of study time per student as a variable itself, which could impact academic performance and thus sleep). Using a larger and more expansive data set may also validate our findings, which in turn can be used to more confidently predict how a student’s regular amount of sleep may impact other parts of their life
+
+## Summary
+College is a unique and crucial time in people’s lives. Many students can often feel like how they perform in college and maximize its opportunities set the precedent for the future success in their careers. Despite college’s potential to be one of the most exciting periods due to the amount of opportunities available to students, this simultaneously leads this stage of life to becoming one of the busiest and academically stressful. 
+
+Often, our peers may feel that getting adequate sleep is something that should not be prioritized at the moment– that the few more moments to prepare for the final project or exam due tomorrow is worth the temporary detriment to personal health. Many students are prone to the habitual mindset that “academics should come first and rest can come later”. While recovering from this sleep debt later in life is not impossible, it is also something that should not be accumulated in the first place. Sacrificing sleep can even be detrimental to the goals of many students in the long run. By prioritizing sufficient sleep, students can enhance their ability to focus, retain information, and solve problems, ultimately leading to better academic outcomes. Beyond academics, establishing balanced relationships with our health and especially our sleep schedule becomes the foundation to healthier mindsets and less susceptibility to depressive symptoms for our lives past our student careers. 
+
+As a community of higher education, we have a responsibility to shift our culture from one focused on competitiveness to one that equally values personal health through action.
